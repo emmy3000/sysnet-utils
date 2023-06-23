@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Function to perform the git push
+git_push() {
+    git add "$1"
+    git commit -m "$2"
+    git push
+}
+
+# Check if no arguments are provided
+if [ $# -eq 0 ]; then
+    echo "No arguments provided. Please specify files or directories to push."
+    exit 1
+fi
+
+# Check if the first argument is a period (indicating the current directory)
+if [ "$1" = "." ]; then
+    # Prompt for a commit message
+    read -p "Enter the commit message: " commit_message
+
+    # Perform git push for all content in the current directory
+    git_push "*" "$commit_message"
+    exit 0
+fi
+
+# Perform git push for each specified file or directory
+for arg in "$@"; do
+    # Check if the file or directory exists
+    if [ -e "$arg" ]; then
+        # Prompt for a commit message
+        read -p "Enter the commit message for $arg: " commit_message
+
+        # Perform git push for the specified file or directory
+        git_push "$arg" "$commit_message"
+    else
+        echo "File or directory '$arg' does not exist. Skipping..."
+    fi
+done
