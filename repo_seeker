@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+repos=(
+    "https://github.com/emmy3000/alx-system_engineering-devops"
+    "https://github.com/emmy3000/alx-low_level_programming"
+    "https://github.com/emmy3000/AirBnB_clone"
+    "https://github.com/emmy3000/alx-higher_level_programming"
+    "https://github.com/emmy3000/sorting_algorithms"
+    "https://github.com/emmy3000/monty"
+    "https://github.com/emmy3000/alx-zero_day"
+    "https://github.com/emmy3000/zero_day"
+    "https://github.com/emmy3000/alx-pre_course"
+    "https://github.com/emmy3000/binary_trees"
+)
+
+for repo in "${repos[@]}"
+do
+    # Extract the repository name from the URL
+    repo_name=$(basename "$repo" .git)
+
+    # Clone the repository
+    if git clone "$repo" >/dev/null 2>&1; then
+        echo "Successfully cloned: $repo_name"
+    else
+        echo "Repo doesn't exist: $repo_name"
+    fi
+done
