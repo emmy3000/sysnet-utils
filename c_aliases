@@ -1,0 +1,84 @@
+# Clearing and listing commands
+alias clr='clear'
+alias cl='clear -x'
+alias ll='ls -al'
+
+# Directory navigation
+alias crt='cd /root'
+
+# File manipulation
+alias t='touch'
+alias v='vim'
+alias mkp='sudo mkdir -p'
+alias cpr='cp -r'
+alias mvr='mv -r'
+alias rmr='rm -r'
+alias rmf='rm -rf'
+
+# Development and coding
+alias p='pycodestyle'
+alias ch='chmod +x'
+
+# Database
+alias sql='mysql -uroot -p'
+
+# File system
+alias l='ls -l'
+alias x='exit'
+
+# Configuration
+alias vb='vim ~/.bashrc'
+alias vba='vim ~/.bash_aliases'
+alias vbp='vim ~/.bash_profile'
+alias sba='source ~/.bash_aliases'
+alias sbp='source ~/.bash_profile'
+alias sb='source ~/.bashrc'
+
+# Puppet
+alias pl='puppet-lint --fix'
+alias pa='puppet apply'
+
+# Processes
+alias top='htop; echo'                # System monitor for processes
+alias psa='ps aux; echo'              # Show all running processes
+alias psg='ps aux | grep; echo'       # Search for a process
+alias killp='kill; echo'              # Kill a process
+
+# Network
+alias myip='curl ifconfig.me; echo'         # Get your public IP address
+alias pinggoogle='ping -c 5 google.com; echo'    # Ping Google.com
+
+# Disk usage
+alias duh='du -sh * | sort -rh; echo'    # Show disk usage of files and directories
+
+# Archive compression
+alias untar='tar -xvf; echo'    # Extract a tar file
+alias unzip='unzip; echo'       # Extract a zip file
+
+# System information
+alias meminfo='free -m; echo'   # Show memory information
+alias cpuinfo='lscpu; echo'     # Show CPU information
+
+# Text manipulation
+alias grepc='grep --color=auto; echo'    # Enable colored output for grep
+alias sedi='sed -i; echo'               # Edit files in-place with sed
+alias awkc='awk -F, "{print \$1}"; echo'    # Extract the first column with awk
+
+# SSH
+alias ssh='ssh -o StrictHostKeyChecking=no; echo'    # Disable strict host key checking
+
+# Git
+alias g='git; echo'          # Shortcut for 'git' command
+alias gs='git status; echo'  # Shortcut for 'git status'
+alias ga='git add; echo'     # Shortcut for 'git add'
+alias gc='git commit; echo'  # Shortcut for 'git commit'
+alias gp='git push; echo'    # Shortcut for 'git push'
+
+# Docker
+alias dps='docker ps; echo'           # List running containers
+alias dlogs='docker logs; echo'       # View logs of a container
+alias dexec='docker exec -it; echo'   # Execute a command inside a container
+
+# System control
+alias shutdown='sudo shutdown now; echo'    # Shut down the system
+alias reboot='sudo reboot; echo'             # Reboot the system
